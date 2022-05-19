@@ -48,6 +48,7 @@ function newTask() {
 interface btn{
   readonly inputElement : HTMLInputElement;
 }
+
 </script>
 
 <template>
@@ -109,7 +110,7 @@ interface btn{
       </div>
     </div>
     <div class="btn">
-    <button class="button abc x btn">Add Task</button>
+    <button  class="button abc x btn">Add Task</button>
     </div>
   </form>
 </div>

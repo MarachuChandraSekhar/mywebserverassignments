@@ -51,6 +51,16 @@ async function getByHandle(handle){
     }
     return { ...user, password: undefined };
 }
+async function search(s){
+    console.log('search for:' +s);
+    const users = await collection.find({ $or  :[
+        { firstName: { $regex: s, $options: 'i'}},
+        { LasttName: { $regex: s, $options: 'i'}},
+        { handle: { $regex: s, $options: 'i'}}
+    ]
+
+    }).toArray();
+}
 
 async function remove(id){
     const user = await collection.findOneAndDelete({ _id: new ObjectId(id) });
